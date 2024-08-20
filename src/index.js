@@ -27,15 +27,22 @@ const BookList = () => {
   )
 }
 const EventExamples = () => {
-  const handleFormInput = () => {
+  const handleFormInput = (example) => {
     console.log('Handle form input')
+    console.log(example.target.name)
+    console.log(example.target.value)
+    console.log(example.target)
   }
   const handleButtonClick = () => {
     alert('Handle button click')
   }
+  const handleFormSubmisstion = (example) => {
+    example.preventDefault()
+    console.log('Form is summitted')
+  }
   return (
     <section>
-      <form>
+      <form onSubmit={handleFormSubmisstion}>
         <h2>Typical form</h2>
         <input
           type="text"
